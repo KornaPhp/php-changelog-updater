@@ -1,6 +1,11 @@
 <?php
 
 declare(strict_types=1);
+use Illuminate\Console\Scheduling\ScheduleFinishCommand;
+use Illuminate\Console\Scheduling\ScheduleRunCommand;
+use Illuminate\Foundation\Console\VendorPublishCommand;
+use NunoMaduro\LaravelConsoleSummary\SummaryCommand;
+use Symfony\Component\Console\Command\HelpCommand;
 
 return [
 
@@ -15,7 +20,7 @@ return [
     |
     */
 
-    'default' => NunoMaduro\LaravelConsoleSummary\SummaryCommand::class,
+    'default' => SummaryCommand::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -57,11 +62,11 @@ return [
     */
 
     'hidden' => [
-        NunoMaduro\LaravelConsoleSummary\SummaryCommand::class,
-        Symfony\Component\Console\Command\HelpCommand::class,
-        Illuminate\Console\Scheduling\ScheduleRunCommand::class,
-        Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
-        Illuminate\Foundation\Console\VendorPublishCommand::class,
+        SummaryCommand::class,
+        HelpCommand::class,
+        ScheduleRunCommand::class,
+        ScheduleFinishCommand::class,
+        VendorPublishCommand::class,
     ],
 
     /*
